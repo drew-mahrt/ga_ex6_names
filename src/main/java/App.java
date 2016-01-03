@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class App
 {
     public static void main(String[] args)
@@ -7,12 +9,19 @@ public class App
         // this method should return the combination of the first and last name as one string
 
         // ask the user for their first name
+        Scanner input = new Scanner(System.in);
+        System.out.println("What is your first name?");
+        String firstName = input.nextLine();
 
         // ask the user for their last name
+        System.out.println("What is your last name?");
+        String lastName = input.nextLine();
 
         // run the cleanFullName method and store the results in a variable called fullName
+        String fullName = cleanFullName(firstName, lastName);
 
         // print the fullName to the screen
+        System.out.println("Your full name: " + fullName);
     }
 
     private static String capitalize(String name)
@@ -20,5 +29,10 @@ public class App
         name = name.toLowerCase();
         name = name.substring(0, 1).toUpperCase() + name.substring(1);
         return name;
+    }
+
+    private static String cleanFullName(String firstName, String lastName)
+    {
+        return capitalize(firstName) + " " + capitalize(lastName);
     }
 }
