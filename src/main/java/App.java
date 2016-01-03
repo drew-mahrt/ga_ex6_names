@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class App
 {
     public static void main(String[] args)
@@ -13,6 +14,19 @@ public class App
         // run the cleanFullName method and store the results in a variable called fullName
 
         // print the fullName to the screen
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("What is your first name?");
+        String firstName = input.nextLine();
+        System.out.println("What is your last name?");
+        String lastName = input.nextLine();
+        String fullName = cleanFullName(firstName, lastName);
+        System.out.println(fullName);
+    }
+
+    public static String cleanFullName(String firstName, String lastName){
+        String fullName = capitalize(firstName) + " " + capitalize(lastName);
+        return fullName;
     }
 
     private static String capitalize(String name)
