@@ -13,7 +13,6 @@ public class App
         // run the cleanFullName method and store the results in a variable called fullName
 
         // print the fullName to the screen
-        System.out.println(capitalize("DREW"));
     }
 
     private static String capitalize(String name)
